@@ -8,6 +8,7 @@ class Book(models.Model):
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)])
     author = models.CharField(max_length=100)
+    is_best_selling = models.BooleanField()
     
     def __str__(self):
         return f"{self.title} ({self.rating})"
