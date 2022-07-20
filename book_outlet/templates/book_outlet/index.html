@@ -9,9 +9,10 @@
     <ul>
         {% for book in books %}
             {% if book.author is not None %}
-                <li>{{book.title}} written by {{book.author}}</li>
+                {% comment %} <a href="{% url "book_detail" book.id %}"><li>{{ book.title }} written by {{book.author}} --- {{ book.id }}</li></a> {% endcomment %}
+                <a href="{{ book.get_absolute_url }}"><li>{{ book.title }} written by {{book.author}} --- {{ book.id }}</li></a>    
             {% else %}
-                <li>{{book.title}}</li>    
+                <li>{{ book.title }}</li>    
             {% endif %}
         {% endfor %}
     </ul>
