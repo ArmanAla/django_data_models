@@ -14,7 +14,7 @@ class Book(models.Model):
     slug = models.SlugField(default='', null=False, db_index=True)
     
     def get_absolute_url(self):
-        return reverse("book_detail", args=[self.id])
+        return reverse("book_detail", args=[self.slug])
     
     
     def save(self, *args, **kwargs):

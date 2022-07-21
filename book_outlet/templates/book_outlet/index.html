@@ -15,5 +15,9 @@
             <a href="{% url "book_detail" book.slug %}"><li>{{ book.title }}</li></a>    
             {% endif %}
         {% endfor %}
+
+        <hr>
+        <p>Total number of books : {{ total_number_of_books }}</p>
+        <p>Average rating : {{ average_rating }}</p>
     </ul>
 {% endblock %}
